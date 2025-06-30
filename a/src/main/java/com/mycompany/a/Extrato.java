@@ -108,25 +108,35 @@ public class Extrato extends HttpServlet {
             transacoesHtml.append("<p>Erro ao carregar transações.</p>");
         }
 
-        // Página HTML
         resp.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = resp.getWriter()) {
-            out.println("<!DOCTYPE html><html><head><title>Extrato</title>");
+            out.println("<!DOCTYPE html><html lang='pt-br'><head>");
+            out.println("<meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'>");
+            out.println("<title>Extrato – Banco Campos</title>");
             out.println("<style>");
-            out.println("body { font-family: Arial; background: #f4f4f4; padding: 20px; }");
-            out.println(".container { max-width: 600px; margin: auto; }");
-            out.println(".item { background: #fff; margin-bottom: 15px; display: flex; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); overflow: hidden; }");
-            out.println(".faixa { width: 8px; }");
-            out.println(".conteudo { padding: 15px; flex: 1; }");
-            out.println(".valor { font-size: 20px; font-weight: bold; margin-bottom: 4px; }");
-            out.println(".desc { color: #555; margin-bottom: 4px; }");
-            out.println(".data { font-size: 12px; color: #888; }");
-            out.println("a { display: inline-block; margin-top: 20px; text-decoration: none; color: #333; }");
-            out.println("</style>");
-            out.println("</head><body><div class='container'>");
+            out.println(":root{--bg:#0b1c2c;--accent:#d4af37;--card:#13273a;--text:#fff;--muted:#cfd6e1}");
+            out.println("*{box-sizing:border-box;margin:0;padding:0;font-family:'Segoe UI',Arial,sans-serif}");
+            out.println("body{background:var(--bg);color:var(--text);display:flex;flex-direction:column;align-items:center;padding:40px}");
+            out.println(".container{max-width:700px;width:95%;background:var(--card);border-radius:10px;padding:30px;box-shadow:0 10px 18px rgba(0,0,0,.4)}");
+            out.println("h2{color:var(--accent);margin-bottom:20px;text-align:center}");
+            out.println(".scroll-area{max-height:500px;overflow-y:auto;padding-right:4px}");
+            out.println(".item{display:flex;background:#1e3248;margin-bottom:10px;border-radius:6px;box-shadow:0 1px 3px rgba(0,0,0,.2);overflow:hidden}");
+            out.println(".faixa{width:6px}");
+            out.println(".conteudo{padding:15px;flex:1}");
+            out.println(".valor{font-size:18px;font-weight:bold;margin-bottom:4px;color:var(--accent)}");
+            out.println(".desc{color:var(--muted);margin-bottom:3px}");
+            out.println(".data{font-size:12px;color:#aaaaaa}");
+            out.println("a.voltar{display:inline-block;margin-top:25px;padding:10px 20px;background:var(--accent);color:#000;text-decoration:none;border-radius:6px;font-weight:600}");
+            out.println("a.voltar:hover{filter:brightness(1.1)}");
+            out.println("::-webkit-scrollbar{width:8px}");
+            out.println("::-webkit-scrollbar-thumb{background:#555;border-radius:10px}");
+            out.println("</style></head><body>");
+            out.println("<div class='container'>");
             out.println("<h2>Extrato da Conta</h2>");
-            out.println(transacoesHtml.toString());
-            out.println("<a href='painel'>&larr; Voltar ao painel</a>");
+            out.println("<div class='scroll-area'>");
+            out.println(transacoesHtml.toString());   // blocos gerados acima
+            out.println("</div>");
+            out.println("<a href='painel' class='voltar'>&larr; Voltar ao Painel</a>");
             out.println("</div></body></html>");
         }
     }
