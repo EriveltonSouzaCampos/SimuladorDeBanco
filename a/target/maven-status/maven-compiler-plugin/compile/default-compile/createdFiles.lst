@@ -2,8 +2,10 @@ com\mycompany\a\Saque.class
 com\mycompany\a\painel.class
 com\mycompany\a\resources\JakartaEE10Resource.class
 com\mycompany\a\Saldo.class
+com\mycompany\a\Extrato.class
 com\mycompany\a\login.class
 com\mycompany\a\JakartaRestConfiguration.class
 com\mycompany\a\cadastro.class
 com\mycompany\a\Deposito.class
+com\mycompany\a\Transferencia.class
 com\mycompany\a\menu.class
