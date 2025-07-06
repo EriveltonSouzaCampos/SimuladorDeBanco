@@ -34,7 +34,7 @@
 
     <header>
         <div class='logo'>Banco Campos</div>
-        <button class='btn' onclick=\"location.href='cadastro'\">Sign‑up</button>
+        <button class='btn' onclick="location.href='cadastro'">Sign‑up</button>
     </header>
     
     <div class='card'>
