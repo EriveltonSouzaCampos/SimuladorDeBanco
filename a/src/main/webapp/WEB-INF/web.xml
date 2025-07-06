@@ -8,4 +8,15 @@
             30
         </session-timeout>
     </session-config>
+    <welcome-file-list>
+        <welcome-file>WEB-INF/menu.jsp</welcome-file>
+    </welcome-file-list>
+    <servlet>
+        <servlet-name>menu</servlet-name>
+        <servlet-class>com.mycompany.a.menu</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>menu</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
 </web-app>

@@ -17,18 +17,17 @@ public class login extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException {
-        
-        HttpSession sessao = request.getSession();
-        String erro = (String) sessao.getAttribute("erroLogin");
-        if(erro != null) {
-            request.setAttribute("erroLogin", erro);
-            sessao.removeAttribute("erroLogin");
+            HttpSession sessao = request.getSession();
+            String erro = (String) sessao.getAttribute("erroLogin");
+            if(erro != null) {
+                request.setAttribute("erroLogin", erro);
+                sessao.removeAttribute("erroLogin");
+            }
+            
+            // Encaminha para o JSP
+            RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/login.jsp");
+            dispatcher.forward(request, response);
         }
-        
-        // Encaminha para o JSP
-        RequestDispatcher dispatcher = request.getRequestDispatcher("login.jsp");
-        dispatcher.forward(request, response);
-    }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
