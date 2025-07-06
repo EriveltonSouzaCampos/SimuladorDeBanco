@@ -1,0 +1,19 @@
+# Ignorar diretórios de build do Maven/Java
+target/
+*.class
+*.war
+# Se você tiver arquivos JAR ou outros artefatos de build:
+*.jar
+
+# Para projetos Maven, é comum ignorar também a pasta .settings se for um projeto Eclipse
+# .settings/
+
+# E as pastas .idea se for um projeto IntelliJ IDEA
+# .idea/
+
+# E arquivos de metadados do NetBeans, se você usar NetBeans
+# nbproject/private/
+# *.orig
+# *.bak
+# *.swp
+# *~
