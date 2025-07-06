@@ -8,9 +8,6 @@ target/
 # Para projetos Maven, é comum ignorar também a pasta .settings se for um projeto Eclipse
 # .settings/
 
-# E as pastas .idea se for um projeto IntelliJ IDEA
-# .idea/
-
 # E arquivos de metadados do NetBeans, se você usar NetBeans
 # nbproject/private/
 # *.orig
